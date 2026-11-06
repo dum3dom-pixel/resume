@@ -92,3 +92,8 @@ html.motion .s-wide.visible h2 span{background-size:100% 6px}
 @media(max-width:760px){.s-gallery{margin:0 12px 40px}.s-gallery-head{gap:12px;margin-bottom:18px}.s-gallery-head h2{font-size:28px}.s-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:calc(100% + 80px);margin-left:-40px}.s-gal-wrap{height:180px}.s-gal-wrap:nth-child(even){height:220px}.s-wide{margin:0 12px 40px;min-height:300px}.s-wide-copy{padding:36px 7%}.s-wide h2{font-size:clamp(32px,8.8vw,54px)}.s-wide-image{background-position:68% center}.s-wide:after{background:linear-gradient(90deg,#151018de,#15101833)}}
 @media(prefers-reduced-motion:reduce){.s-gal-wrap,.s-wide-image{translate:none!important;will-change:auto}}
 @media print{.s-gallery-window{overflow:visible}.s-gallery-grid{width:100%;margin:0;grid-template-columns:repeat(3,minmax(0,1fr))}.s-gal-wrap,.s-gal-wrap:nth-child(even){height:200px;translate:none!important;will-change:auto}.s-gal{break-inside:avoid}.s-wide{break-inside:avoid}.s-wide-image{translate:none!important;will-change:auto}.s-wide h2 span{background-size:100% 6px!important}}
+
+/* галерея: отдельные кадры вместо нарезки листа (без сплющивания и растяжения) */
+.s-gal{background-size:cover;background-position:center 30%}
+.s-gal.q1{background-image:url('sense-gal-1.webp')}.s-gal.q2{background-image:url('sense-gal-2.webp');background-position:center 70%}.s-gal.q3{background-image:url('sense-gal-3.webp')}.s-gal.q4{background-image:url('sense-gal-4.webp')}.s-gal.q5{background-image:url('sense-gal-5.webp');background-position:center}.s-gal.q6{background-image:url('sense-gal-6.webp')}
+@media screen and (min-width:761px){.s-gal-wrap{height:380px}.s-gal-wrap:nth-child(even){height:450px}}

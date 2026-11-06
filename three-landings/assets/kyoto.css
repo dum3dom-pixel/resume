@@ -54,3 +54,6 @@
 .k-footer-top,.k-footer .site-footline{max-width:1564px;margin-inline:auto}
 @media(max-width:760px){.k-more{padding:25px 6% 45px}.k-more-head h2{font-size:48px}.k-more-head p{font-size:11px}.k-more-track{gap:18px;padding:28px 12px 30px;scroll-padding-inline:12px;scrollbar-width:thin}.k-more-track::-webkit-scrollbar{height:5px}.k-more-item{flex-basis:78%}.k-more-postcard{flex-basis:84%}.k-more-postcard figcaption{font-size:26px}.k-more-item .k-item-caption{font-size:12px}}
 @media print{.k-more-track{overflow:visible;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:24px 12px}.k-more-item,.k-more-item:nth-of-type(even),.k-more-postcard,.k-more-postcard:last-child{transform:none;min-width:0;width:100%;break-inside:avoid}.k-more-postcard figcaption{font-size:24px}}
+
+/* коллекция: перетаскивание мышью, курсор-«лапка» */
+@media(hover:hover) and (pointer:fine){.k-more-track,.k-more-track .k-item{cursor:grab}.k-more-track.is-drag,.k-more-track.is-drag .k-item{cursor:grabbing;scroll-snap-type:none;user-select:none}.k-more-track img{-webkit-user-drag:none}}

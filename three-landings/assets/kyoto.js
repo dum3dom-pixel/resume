@@ -7,6 +7,27 @@ if(collectionTrack)collectionTrack.addEventListener('wheel',e=>{
   const max=collectionTrack.scrollWidth-collectionTrack.clientWidth,left=collectionTrack.scrollLeft;
   if((delta>0&&left<max-1)||(delta<0&&left>1)){e.preventDefault();collectionTrack.scrollLeft=Math.max(0,Math.min(max,left+delta))}
 },{passive:false});
+/* мышью коллекцию можно тянуть (курсор «лапка»); касание остаётся нативным */
+if(collectionTrack&&matchMedia('(hover:hover) and (pointer:fine)').matches){
+  let id=null,sx=0,sl=0,drag=false;
+  collectionTrack.addEventListener('pointerdown',e=>{
+    if(e.button!==0||e.offsetY>collectionTrack.clientHeight||e.offsetX>collectionTrack.clientWidth)return;
+    id=e.pointerId;sx=e.clientX;sl=collectionTrack.scrollLeft;drag=false;
+  });
+  collectionTrack.addEventListener('pointermove',e=>{
+    if(e.pointerId!==id)return;
+    const dx=e.clientX-sx;
+    if(!drag&&Math.abs(dx)>5){drag=true;collectionTrack.classList.add('is-drag');collectionTrack.setPointerCapture(id)}
+    if(drag)collectionTrack.scrollLeft=sl-dx;
+  });
+  const end=e=>{
+    if(e.pointerId!==id)return;
+    id=null;collectionTrack.classList.remove('is-drag');
+    if(drag)collectionTrack.addEventListener('click',ev=>ev.stopPropagation(),{capture:true,once:true});
+    drag=false;
+  };
+  collectionTrack.addEventListener('pointerup',end);collectionTrack.addEventListener('pointercancel',end);
+}
 if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
@@ -61,7 +82,6 @@ const frame=()=>{
   const y=scrollY,vh=innerHeight,doc=document.documentElement;
   bar.style.setProperty('--p',(y/Math.max(1,doc.scrollHeight-vh)).toFixed(4));
   if(hero&&y<hero.offsetHeight+100){
-    if(photo)photo.style.transform='translate3d(0,'+Math.min(y*.12,40).toFixed(1)+'px,0)';
     if(h1)h1.style.translate='0 '+(y*.16).toFixed(1)+'px';
   }
   pItems.forEach(el=>{
