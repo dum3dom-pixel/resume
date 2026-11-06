@@ -11,11 +11,13 @@ const trailSvg=document.querySelector('.s-trail');
 const photo=document.querySelector('.s-studio-photo');
 const photoBox=document.querySelector('.s-studio-picture');
 const band=document.querySelector('.s-marquee');
+const gallery=document.querySelector('.s-gallery-window'),galleryItems=$('.s-gal-wrap');
+const wide=document.querySelector('.s-wide'),wideImage=document.querySelector('.s-wide-image');
 const bar=document.createElement('div');bar.className='s-progress';document.body.append(bar);
 let mx=0,my=0,tx=0,ty=0,lastY=scrollY,skew=0,printing=false;
 hero.addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
 hero.addEventListener('pointerleave',()=>{mx=my=0});
-addEventListener('beforeprint',()=>{printing=true;trail.forEach(({el})=>el.style.strokeDashoffset=0);shots.forEach(({el})=>el.style.transform='');cards.forEach(({el})=>{el.style.translate='';el.style.rotate=''});photo.style.transform='';band.style.transform=''});
+addEventListener('beforeprint',()=>{printing=true;trail.forEach(({el})=>el.style.strokeDashoffset=0);shots.forEach(({el})=>el.style.transform='');cards.forEach(({el})=>{el.style.translate='';el.style.rotate=''});photo.style.transform='';band.style.transform='';galleryItems.forEach(el=>el.style.translate='');if(wideImage)wideImage.style.translate=''});
 addEventListener('afterprint',()=>{printing=false});
 function frame(){
   requestAnimationFrame(frame);
@@ -36,6 +38,17 @@ function frame(){
   });
   const pp=clamp((photoRect.top+photoRect.height/2-vh/2)/vh,-1,1);
   photo.style.transform=`translateY(${(pp*-30).toFixed(1)}px) scale(1.15)`;
+  if(gallery){
+    const r=gallery.getBoundingClientRect(),mobile=innerWidth<=760;
+    if(r.bottom>-200&&r.top<vh+200){
+      const progress=clamp((vh/2-r.top-r.height/2)/(vh/2+r.height/2),-1,1),columns=mobile?2:3,range=mobile?40:120;
+      galleryItems.forEach((el,i)=>{const direction=Math.floor(i/columns)%2?1:-1;el.style.translate=`${(progress*range*direction).toFixed(1)}px 0`});
+    }
+  }
+  if(wide&&wideImage){
+    const r=wide.getBoundingClientRect();
+    if(r.bottom>-200&&r.top<vh+200){const progress=clamp((r.top+r.height/2-vh/2)/(vh/2+r.height/2),-1,1);wideImage.style.translate=`0 ${(-progress*r.height*.08).toFixed(1)}px`}
+  }
   skew+=(clamp((y-lastY)*.3,-14,14)-skew)*.12;lastY=y;
   band.style.transform=`skewX(${skew.toFixed(2)}deg)`;
   const max=document.documentElement.scrollHeight-vh;

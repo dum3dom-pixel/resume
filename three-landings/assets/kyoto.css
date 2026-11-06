@@ -32,3 +32,25 @@
 @media(max-width:760px){.kyoto dialog .dlg-body{padding:30px 22px 22px}.kyoto dialog:after{display:none}.kyoto dialog .dlg-body:before,.kyoto dialog .modal-product{width:220px;height:220px;margin-left:-110px}.kyoto dialog .modal-product{margin-left:auto}}
 
 .kyoto{--dlg-half:260px}
+
+/* Ещё из коллекции: товары и уличные открытки в одной ленте. */
+.k-item-photo.v2{background-image:url('kyoto-products-2.webp')}
+.k-item-photo.v3{background-image:url('kyoto-products-3.webp')}
+.k-more{padding:45px 4% 65px}
+.k-more-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:18px;margin-bottom:20px}
+.k-more-head .eyebrow{font-size:9px}
+.k-more-head h2{font-size:clamp(44px,5vw,76px);font-weight:400;line-height:1.05;margin-top:12px;transform:rotate(-3deg)}
+.k-more-head p{font-size:12px;color:#f7f6e7;max-width:230px}
+.k-more-track{display:flex;align-items:center;gap:28px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding:38px 22px 40px;scroll-padding-inline:22px;scrollbar-width:auto;scrollbar-color:var(--yellow) #1d6c2b;-webkit-overflow-scrolling:touch}
+.k-more-track::-webkit-scrollbar{height:12px}.k-more-track::-webkit-scrollbar-track{background:#1d6c2b;border-radius:20px}.k-more-track::-webkit-scrollbar-thumb{background:var(--yellow);border:2px solid #1d6c2b;border-radius:20px}
+.k-more-item{flex:0 0 clamp(260px,25vw,350px);min-width:0;scroll-snap-align:start;transform:rotate(-3deg)}
+.k-more-item:nth-of-type(even){transform:rotate(3deg)}
+.k-more-item .k-item-photo{aspect-ratio:1}
+.k-more-item .k-item-caption{min-height:50px;padding:16px 16px 8px;font-size:13px;line-height:1.4;justify-content:center;text-align:center}
+.k-more-postcard{flex:0 0 clamp(300px,30vw,420px);margin:0;padding:10px 10px 20px;background:#f7f6e7;color:#278537;transform:rotate(4deg);scroll-snap-align:start;box-shadow:4px 7px 0 #164d2566}
+.k-more-postcard:last-child{transform:rotate(-4deg)}
+.k-more-postcard img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.k-more-postcard figcaption{text-align:center;font-size:30px;line-height:1;margin-top:17px}
+.k-footer-top,.k-footer .site-footline{max-width:1564px;margin-inline:auto}
+@media(max-width:760px){.k-more{padding:25px 6% 45px}.k-more-head h2{font-size:48px}.k-more-head p{font-size:11px}.k-more-track{gap:18px;padding:28px 12px 30px;scroll-padding-inline:12px;scrollbar-width:thin}.k-more-track::-webkit-scrollbar{height:5px}.k-more-item{flex-basis:78%}.k-more-postcard{flex-basis:84%}.k-more-postcard figcaption{font-size:26px}.k-more-item .k-item-caption{font-size:12px}}
+@media print{.k-more-track{overflow:visible;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:24px 12px}.k-more-item,.k-more-item:nth-of-type(even),.k-more-postcard,.k-more-postcard:last-child{transform:none;min-width:0;width:100%;break-inside:avoid}.k-more-postcard figcaption{font-size:24px}}

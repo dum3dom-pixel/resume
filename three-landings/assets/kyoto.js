@@ -1,4 +1,12 @@
 (()=>{'use strict';
+/* Колесо прокручивает коллекцию; на краях прокрутка страницы продолжается. */
+const collectionTrack=document.querySelector('.k-more-track');
+if(collectionTrack)collectionTrack.addEventListener('wheel',e=>{
+  if(e.ctrlKey||!matchMedia('(hover:hover) and (pointer:fine)').matches||Math.abs(e.deltaX)>=Math.abs(e.deltaY))return;
+  const unit=e.deltaMode===1?16:e.deltaMode===2?collectionTrack.clientWidth:1,delta=e.deltaY*unit;
+  const max=collectionTrack.scrollWidth-collectionTrack.clientWidth,left=collectionTrack.scrollLeft;
+  if((delta>0&&left<max-1)||(delta<0&&left>1)){e.preventDefault();collectionTrack.scrollLeft=Math.max(0,Math.min(max,left+delta))}
+},{passive:false});
 if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;

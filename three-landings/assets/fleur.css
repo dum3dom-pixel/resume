@@ -110,3 +110,7 @@ body.fleur{background:#e6e3da}.f-page{max-width:1600px;margin:auto;background:va
 @media(max-width:760px){.fleur dialog .dlg-body{grid-template-columns:1fr;min-height:0}.f-dlg-art{padding:52px 30px 36px}.fleur .modal-product{max-width:260px}.f-dlg-info{padding:30px 24px 26px}.fleur dialog h2{font-size:38px}}
 
 .fleur{--dlg-half:420px}
+
+/* Самостоятельная деталь образа и новый портрет для лукбука. */
+.f-polaroid img{object-position:50% 65%}
+.f-brand-panel>img{object-position:48% 20%}
