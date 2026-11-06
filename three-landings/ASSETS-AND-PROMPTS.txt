@@ -21,3 +21,26 @@ Use case: product-mockup. Asset: a square transparent PNG contact sheet with FOU
 
 ASSET: assets/kyoto-street.webp
 Use case: photorealistic-natural. Asset for independent Kyoto streetwear editorial web collage. Landscape 3:2 authentic 35mm street photograph on a quiet sunny Japanese residential street: a young adult Japanese man in a loose mustard-yellow and navy patterned overshirt, white t-shirt, very loose olive cargo trousers, white sneakers and casual cap stands on LEFT third of frame, looking to his right. Entire body visible including shoes. Next to him on RIGHT is a charming tiny old neighborhood coffee shop with a forest green and cream striped awning, weathered cream facade, potted plants, a red vintage drinks vending machine. A narrow sunny street stretches behind the shop. Actual candid analog photography, not illustrated, saturated green summer foliage, hard natural sunlight and beautiful slightly faded film colors, authentic tactile magazine character. No large text or overlaid lettering, no logos, no UI, no watermark, plausible understated small Japanese shop signage is fine. The coffee shop occupies half the frame and its roof and awning must be visible, no cropped person.
+
+# ===== НОВЫЕ КАРТИНКИ ДЛЯ KYOTO (промты для ImageGen / Midjourney / GPT-image; Claude сам картинки не генерирует) =====
+# Стиль общий: тёплая плёнка 35mm, насыщенная трава-зелёный + жёлтые акценты, независимая киотская лавка, без текста и логотипов.
+# Сохранять как WebP рядом с остальными: assets/kyoto-products-2.webp и т.д. — после этого я подключу их в галерею.
+
+ASSET: assets/kyoto-products-2.webp
+Use case: product-mockup. Asset: a square transparent PNG contact sheet with FOUR isolated clothing objects each completely contained in one quadrant of a perfect 2x2 grid, no overlap, wide breathing room each cell. Top LEFT: relaxed mustard-yellow cotton t-shirt with a big hand-drawn navy wave and red sun graphic, no writing. Top RIGHT: faded navy bucket hat with a tiny cream maple-leaf embroidery. Bottom LEFT: oversized sage-green short-sleeve overshirt with small white koi fish print, no writing. Bottom RIGHT: small red canvas pouch bag with a hand-drawn yellow daruma face, no writing. Streetwear souvenir mood of a charming handmade independent Kyoto shop, real studio product photographs, objects gently rotated at individual angles, authentic cotton and stitch texture. Genuinely transparent background. No human, no hanger, no letters or words, no labels, no watermarks. Exactly four different products in a 2x2 regular grid.
+
+ASSET: assets/kyoto-products-3.webp
+Use case: product-mockup. Same format as kyoto-products-2 (2x2 transparent contact sheet, four isolated objects). Top LEFT: white heavy-cotton t-shirt with a playful abstract sakura-branch drawing in pink and green, no writing. Top RIGHT: khaki six-panel cap with a small embroidered orange persimmon. Bottom LEFT: natural canvas tote with a hand-drawn green bamboo graphic and red leather handles. Bottom RIGHT: striped green-and-cream cotton shorts. No human, no text, no logos, no watermark.
+
+ASSET: assets/kyoto-lane.webp
+Use case: photorealistic-natural. Landscape 3:2 authentic 35mm street photograph in a quiet sunny Kyoto side lane: two elderly Japanese women in colorful casual cotton shirts and straw hats laughing together beside a small old vegetable stall with green crates, wooden eaves and hanging noren curtains with no readable text. Saturated summer greens, hard natural sunlight, faded film colors, candid understated magazine character. Full bodies visible. No overlaid text, no logos, no UI, no watermark.
+
+ASSET: assets/kyoto-bike.webp
+Use case: photorealistic-natural. Landscape 3:2 candid analog photograph: a young Japanese woman in an oversized cream t-shirt with a simple colorful abstract drawing (no letters), wide olive trousers and white sneakers, riding an old black city bicycle with a canvas tote in the basket along a river path lined with green trees and old wooden houses in Kyoto. Warm backlight, shallow depth of field, 35mm film grain, slightly faded colors. Leave calm space on the left third. No text, no logos, no watermark.
+
+--- NEW (not generated yet): extra photos for sense.html, same style as assets/sense-dancers.webp ---
+ASSET: assets/sense-gallery.webp
+Use case: photorealistic-natural. Clean 3x2 photographic contact sheet of SIX distinct adult dance studio photos, equal panels, no gutters, no frames, no text. Same look as the existing set: electric blue / lilac / magenta theatrical light, pale pink minimal studio, raw concrete studio, film texture, full-body dancers, credible anatomy. Panels: 1 woman mid-spin with flying hair in blue light; 2 close detail of heels stepping on polished concrete with pink light; 3 two dancers back to back in violet haze; 4 woman in loose cargo pants dropping into a low stance, magenta backlight; 5 group of five in a pale pink studio mid-jump; 6 dancer reflected in a studio mirror wall, lilac light. No text, logos, captions or UI.
+
+ASSET: assets/sense-wide.webp
+Use case: photorealistic-natural. Wide 21:9 editorial photo of a dance studio class in motion, 8 adult women in black dancewear and heels, concrete walls, pink and lilac light, motion blur on arms, empty darker area on the left third for HTML text. No text, logos or watermark.
