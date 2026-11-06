@@ -48,3 +48,20 @@ html.motion .s-trial:not(.visible) h2 span{rotate:-12deg;scale:.6;opacity:0}
 /* scroll progress */
 .s-progress{position:fixed;top:0;left:0;right:0;height:4px;background:#9a53ad;transform-origin:0 50%;transform:scaleX(0);z-index:120;pointer-events:none}
 @media print{.s-progress{display:none}}
+
+/* ===== Модалка SENSE: тёмная сцена, лайм и лиловая рамка ===== */
+.sense dialog{width:min(560px,calc(100vw - 32px));padding:0;border-radius:34px;background:#202020;color:#fff;border:1px solid #ffffff22;box-shadow:0 0 0 6px #edc3f7,0 30px 80px #000a}
+.sense dialog .dlg-body{position:relative;padding:26px 26px 24px}
+.sense dialog .close{position:absolute;top:38px;right:38px;z-index:2;margin:0;border:0;background:#d8fa38;color:#202020;transition:transform .35s var(--ease)}
+.sense dialog .close:hover{transform:rotate(90deg) scale(1.08)}
+.sense .dlg-count{top:38px;left:38px;z-index:2;opacity:1;color:#d8fa38;background:#202020c4;padding:6px 12px;border-radius:20px;backdrop-filter:blur(4px)}
+.sense dialog .dialog-photo{aspect-ratio:4/3;border-radius:24px;filter:saturate(1.15)}
+.sense dialog h2{font-size:clamp(32px,6vw,46px);text-transform:uppercase;letter-spacing:-.04em;line-height:1;margin:24px 4px 6px;color:#edc3f7}
+.sense dialog .dialog-copy{margin:10px 4px;color:#ffffffbf}
+.sense dialog .dialog-action{background:#d8fa38;color:#202020;border-radius:40px;padding:18px 26px;font-weight:600;margin-top:18px}
+.sense dialog .dialog-action:hover{background:#edc3f7}
+.sense dialog .demo-note{color:#fff;margin:12px 4px 0}
+.sense .dlg-nav:hover,.sense .dlg-nav:focus-visible{background:#d8fa38;color:#202020;border-color:#d8fa38}
+@media(max-width:760px){.sense dialog{border-radius:26px}.sense dialog .dlg-body{padding:18px 18px 20px}.sense dialog .close{top:28px;right:28px}.sense .dlg-count{top:28px;left:28px}}
+
+.sense{--dlg-half:280px}

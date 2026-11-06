@@ -15,3 +15,99 @@ body.fleur{background:#e6e3da}.f-page{max-width:1600px;margin:auto;background:va
 @media(max-width:760px){.f-arrival h2{font-size:clamp(42px,15.4vw,95px)}}
 
 .f-newsletter .form-row button{font-size:10px;font-weight:500;padding:14px 0 14px 16px;white-space:nowrap}
+
+/* ===== Вертикальный ритм: больше высоты и воздуха сверху/снизу у каждого блока ===== */
+.f-cover{height:min(72vw,1040px);min-height:880px}
+.f-hero{padding:96px 4.7% 96px}
+.f-hero-meta{margin-top:56px}
+.f-collection{min-height:680px}
+.f-arrival{padding:72px 8% 64px}
+.f-collection-story{padding:104px 15px 68px 12%}
+.f-categories{padding:96px 12% 68px 8%}
+.f-categories>a{padding:18px 0 20px}
+.f-lookbook{min-height:580px}
+.f-brand-panel,.f-world{min-height:580px}
+.f-brand-words{margin-top:84px}
+.f-brand-panel>.hand{bottom:46px;left:34px}
+.f-world{padding:74px 28px 60px 38px}
+.f-shop{padding:120px 3.5% 130px;gap:34px 20px;min-height:0}
+.f-shop-heading{grid-row:span 2;padding-top:30px}
+.f-footer{padding:100px 4% 44px}
+.f-newsletter{min-height:250px}
+.f-footer .site-footline{padding-top:34px;margin-top:44px}
+@media(min-width:1600px){.f-hero{padding-top:110px}.f-collection{min-height:720px}.f-lookbook,.f-world,.f-brand-panel{min-height:620px}}
+@media(max-width:1100px){.f-cover{min-height:780px}.f-collection{min-height:560px}.f-arrival{padding:56px 8% 48px}.f-collection-story{padding-top:76px;padding-bottom:52px}.f-categories{padding-top:68px;padding-bottom:48px}.f-lookbook,.f-brand-panel,.f-world{min-height:480px}.f-brand-words{margin-top:60px}.f-world{padding-top:56px}.f-shop{padding:84px 3.5% 96px}}
+@media(max-width:760px){.f-cover{height:940px;min-height:0}.f-hero{padding:48px 6% 44px}.f-arrival{min-height:450px;padding:52px 14px 40px}.f-walk{min-height:450px}.f-collection-story{padding:60px 23px 48px;min-height:440px}.f-categories{padding:48px 22px 44px 12px}.f-brand-panel{min-height:400px}.f-brand-words{margin-top:58px}.f-world{min-height:460px;padding:52px 25px 44px}.f-shop{padding:68px 20px 76px;gap:22px 13px}.f-shop-heading{grid-row:auto}.f-footer{padding:72px 22px 36px}.f-newsletter{min-height:0}}
+
+/* ===== Бегущие строки ===== */
+.f-marquee{overflow:hidden;background:var(--ink);color:var(--paper);padding:22px 0;position:relative;z-index:3}
+.f-marquee.rev{background:var(--pink);color:var(--ink)}
+.f-marquee-track{display:flex;width:max-content;animation:marquee 42s linear infinite}
+.f-marquee.rev .f-marquee-track{animation-direction:reverse}
+.f-marquee-track>span{display:flex;align-items:center;flex:none}
+.f-marquee b{font:700 clamp(26px,3.2vw,46px)/1 'Oswald',Impact,sans-serif;text-transform:uppercase;white-space:nowrap;padding:0 28px}
+.f-marquee i{width:14px;height:14px;border-radius:50%;background:var(--lime);flex:none}
+.f-marquee.rev i{background:var(--ink)}
+
+/* ===== Лето по маршруту ===== */
+.f-route{background:var(--paper);padding:120px 4.7% 130px;position:relative}
+.f-route-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px 30px;padding-top:44px;margin-bottom:72px;position:relative}
+.f-route-head .hand{position:absolute;left:0;top:0;font-size:48px;line-height:1;transform:rotate(-6deg);color:#d28a9f}
+.f-route-head h2{font-size:clamp(64px,8.4vw,128px);line-height:.95;letter-spacing:-.05em}
+.f-route-head p{max-width:280px;padding-bottom:10px}
+.f-route-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;align-items:start}
+.f-route-card{position:relative;padding:22px 22px 28px;display:flex;flex-direction:column;gap:10px;min-height:600px;transition:transform .5s var(--ease),box-shadow .5s}
+.f-route-card:nth-child(2){margin-top:56px}
+.f-route-card:hover{transform:translateY(-10px) rotate(-.7deg);box-shadow:9px 11px 0 #1c1d1b24}
+.is-blue{background:#abcbe0}.is-pink{background:#eaa0b8}.is-lime{background:#ddec7a}
+.f-route-photo{aspect-ratio:1/.92;background:#f4f0e8;border:8px solid #fffdf4;overflow:hidden;position:relative;box-shadow:0 4px 12px #0001}
+.f-route-photo img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.f-route-photo.is-cutout{background:#fbe6ec}.f-route-photo.is-cutout img{object-fit:contain;padding:10px 0 0}
+.f-route-photo .sheet-photo{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;transition:transform 1.2s var(--ease)}
+.f-route-card:hover .f-route-photo img,.f-route-card:hover .f-route-photo .sheet-photo{transform:scale(1.07)}
+.f-route-card small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-top:14px}
+.f-route-card h3{font:700 clamp(40px,4vw,60px)/.95 'Oswald',Impact,sans-serif;text-transform:uppercase;letter-spacing:-.02em}
+.f-route-card .hand{font-size:25px;line-height:1.1;max-width:300px}
+.f-route-card .line-arrow{margin-top:auto;align-self:flex-start;font-size:10px;padding:13px 18px}
+
+/* ===== Что внутри заказа ===== */
+.f-perks{display:grid;grid-template-columns:repeat(3,1fr);background:#f1ece3;border-top:1px solid #d6d0c3}
+.f-perk{padding:72px 6%;display:flex;flex-direction:column;align-items:flex-start;gap:8px;border-right:1px solid #d6d0c3}
+.f-perk:last-child{border-right:0}
+.f-perk>svg{width:56px;height:56px;margin-bottom:16px;color:#d28a9f;position:static;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+.f-perk b{font:700 clamp(24px,2.3vw,32px)/1 'Oswald',Impact,sans-serif;text-transform:uppercase}
+.f-perk span{font-size:12px;line-height:1.5;opacity:.7;max-width:240px}
+@media(max-width:1100px){.f-route-cards{gap:18px}.f-route-card{min-height:540px}.f-route-card .hand{font-size:22px}}
+@media(max-width:760px){.f-route{padding:72px 20px 84px}.f-route-head{margin-bottom:44px}.f-route-head .hand{font-size:38px}.f-route-cards{grid-template-columns:1fr;gap:28px}.f-route-card{min-height:0}.f-route-card:nth-child(2){margin-top:0}.f-route-card .line-arrow{margin-top:14px}.f-perks{grid-template-columns:1fr}.f-perk{padding:44px 22px;border-right:0;border-bottom:1px solid #d6d0c3}.f-perk:last-child{border-bottom:0}.f-marquee{padding:16px 0}}
+
+/* ===== Новые карточки в магазине ===== */
+.f-product{position:relative}
+.f-product-badge{position:absolute;top:18px;left:-7px;z-index:2;background:var(--lime);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:5px 10px;transform:rotate(-6deg);box-shadow:2px 2px 0 #1c1d1b24;pointer-events:none}
+
+/* ===== Модалка le FLEUR*: открытка с полароидом ===== */
+.fleur dialog{width:min(840px,calc(100vw - 32px));max-width:none;padding:0;border-radius:0;background:var(--paper);box-shadow:14px 14px 0 var(--pink)}
+.fleur dialog .dlg-body{display:grid;grid-template-columns:1fr 1.05fr;min-height:470px;position:relative}
+.fleur dialog .close{position:absolute;top:16px;right:16px;margin:0;z-index:2;width:38px;height:38px;border:1px solid var(--ink);border-radius:0;background:var(--paper);transition:background .25s,transform .35s var(--ease)}
+.fleur dialog .close:hover{background:var(--lime);transform:rotate(90deg)}
+.fleur .dlg-count{top:18px;left:22px;opacity:.85;z-index:2}
+.f-dlg-art{position:relative;display:grid;place-items:center;padding:56px 36px 44px;background:#abcbe0;overflow:hidden;transition:background .4s}
+.f-dlg-art:has(.q2){background:#ddec7a}.f-dlg-art:has(.q3){background:#eaa0b8}.f-dlg-art:has(.q4){background:#e3d8b6}
+.fleur .modal-product{position:relative;width:100%;max-width:340px;height:auto;aspect-ratio:1;margin:0;border:10px solid #fffdf4;border-bottom-width:42px;background-color:#f3eee5;background-repeat:no-repeat;box-shadow:0 8px 20px #0002;transform:rotate(-3deg)}
+.fleur .modal-product:after{content:"";position:absolute;top:-24px;left:30%;width:40%;height:26px;background:repeating-linear-gradient(83deg,#252624b5 0 1px,#4a4b47b3 2px 4px);transform:rotate(5deg);clip-path:polygon(0 5%,98% 0,100% 90%,2% 100%)}
+.f-dlg-flower{position:absolute;right:16px;bottom:14px;width:48px;height:48px;color:#fffdf4;animation:rotate 26s linear infinite}
+.f-dlg-info{display:flex;flex-direction:column;align-items:flex-start;padding:64px 40px 34px}
+.fleur .dialog-tag{background:var(--lime);padding:4px 11px;transform:rotate(-3deg);font-size:10px;font-weight:600;margin-bottom:16px}
+.fleur .dialog-tag:empty{display:none}
+.fleur dialog h2{font:700 clamp(36px,4.4vw,54px)/.96 'Oswald',Impact,sans-serif;text-transform:uppercase;letter-spacing:-.025em;margin:0 0 14px}
+.fleur .dialog-copy{margin:0;font-size:14px;line-height:1.65}
+.fleur .dialog-price{font-size:46px;line-height:1;margin:18px 0 4px;background:linear-gradient(transparent 58%,var(--pink) 58%);padding:0 6px}
+.fleur .dialog-price:empty{display:none}
+.fleur .size-list{margin-top:18px}
+.fleur .size-list button{border-radius:0;background:transparent;border:1px solid var(--ink);padding:10px 18px;min-width:48px;transition:background .25s,transform .25s var(--ease)}
+.fleur .size-list button:hover{transform:translateY(-2px)}
+.fleur .size-list button[aria-pressed=true]{background:var(--lime);box-shadow:3px 3px 0 var(--ink)}
+.fleur .dialog-action{border-radius:0;margin-top:26px;padding:19px 20px}
+.fleur .f-dlg-info .demo-note{margin:14px 0 0}
+@media(max-width:760px){.fleur dialog .dlg-body{grid-template-columns:1fr;min-height:0}.f-dlg-art{padding:52px 30px 36px}.fleur .modal-product{max-width:260px}.f-dlg-info{padding:30px 24px 26px}.fleur dialog h2{font-size:38px}}
+
+.fleur{--dlg-half:420px}

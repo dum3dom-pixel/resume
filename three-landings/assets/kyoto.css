@@ -11,3 +11,24 @@
 
 .k-up{font-family:inherit;font-size:13px;text-decoration:underline;text-underline-offset:6px}.k-about-copy>a{gap:0}.k-item-caption{justify-content:flex-start}.k-item-caption>span{font:inherit;line-height:inherit}
 @media(max-width:760px){.k-up{font-size:11px}}
+
+/* ===== Модалка Kyoto: красное солнце, жёлтые кружки размеров, зелёная кнопка ===== */
+.kyoto dialog{width:min(520px,calc(100vw - 32px));padding:0;border-radius:6px;background:#f6f2df;border:3px solid #1c1d1b;box-shadow:10px 10px 0 #278537}
+.kyoto dialog:after{content:"ちょっと京都";position:absolute;right:16px;top:74px;writing-mode:vertical-rl;font-size:13px;font-weight:700;letter-spacing:.3em;color:#ed3a26;pointer-events:none}
+.kyoto dialog .dlg-body{position:relative;isolation:isolate;padding:34px 34px 26px;text-align:center}
+.kyoto dialog .dlg-body:before{content:"";position:absolute;z-index:-1;left:50%;top:48px;width:262px;height:262px;margin-left:-131px;border-radius:50%;background:#ed3a26;box-shadow:0 0 0 9px #f6f2df,0 0 0 12px #ed3a26}
+.kyoto dialog .close{position:absolute;top:14px;right:14px;margin:0;width:36px;height:36px;border:2px solid #1c1d1b;background:#f1eb39;transition:transform .35s var(--ease)}
+.kyoto dialog .close:hover{transform:rotate(90deg)}
+.kyoto .dlg-count{top:20px;left:22px;font-weight:700;color:#278537;opacity:1}
+.kyoto dialog .modal-product{position:relative;z-index:1;width:262px;height:262px;max-width:none;margin:14px auto 0;background-color:transparent;border-radius:0;filter:drop-shadow(0 10px 6px #0003)}
+.kyoto dialog h2{font:500 clamp(36px,6.4vw,48px)/1 'Caveat',cursive;letter-spacing:0;margin:30px 0 4px}
+.kyoto dialog .dialog-copy{margin:8px auto;max-width:400px;font-size:14px;line-height:1.65}
+.kyoto .size-list{justify-content:center;gap:10px;margin-top:18px}
+.kyoto .size-list button{width:48px;height:48px;padding:0;border-radius:50%;border:2px solid #1c1d1b;background:transparent;font-weight:600;transition:transform .3s var(--ease),background .25s}
+.kyoto .size-list button:hover{transform:translateY(-3px) rotate(-6deg)}
+.kyoto .size-list button[aria-pressed=true]{background:#f1eb39;box-shadow:3px 3px 0 #1c1d1b}
+.kyoto dialog .dialog-action{background:#278537;color:#fff;border-radius:40px;padding:17px 26px;font-weight:600}
+.kyoto .dlg-nav:hover,.kyoto .dlg-nav:focus-visible{background:#f1eb39;color:#1c1d1b;border-color:#f1eb39}
+@media(max-width:760px){.kyoto dialog .dlg-body{padding:30px 22px 22px}.kyoto dialog:after{display:none}.kyoto dialog .dlg-body:before,.kyoto dialog .modal-product{width:220px;height:220px;margin-left:-110px}.kyoto dialog .modal-product{margin-left:auto}}
+
+.kyoto{--dlg-half:260px}

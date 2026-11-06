@@ -6,3 +6,18 @@
 
 /* Text-only controls: no repeated arrow pictograms. */
 .line-arrow{justify-content:center;gap:0}
+
+/* Модалка: полупрозрачные стрелки листания карточек (создаются в common.js, лежат в fixed, поэтому не обрезаются dialog) */
+.dlg-nav{position:fixed;top:50%;translate:0 -50%;z-index:3;width:58px;height:58px;padding:0 0 5px;border-radius:50%;display:grid;place-items:center;font:300 36px/1 Arial,sans-serif;color:#fff;background:#ffffff2e;border:1px solid #ffffff6e;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:.72;transition:opacity .25s,background .25s,color .25s,transform .35s var(--ease)}
+.dlg-nav:hover,.dlg-nav:focus-visible{opacity:1;background:#ffffff66}
+.dlg-nav.prev{left:max(14px,calc(50vw - var(--dlg-half,280px) - 78px))}.dlg-nav.next{right:max(14px,calc(50vw - var(--dlg-half,280px) - 78px))}
+.dlg-nav.prev:hover{transform:translateX(-5px)}.dlg-nav.next:hover{transform:translateX(5px)}
+.dlg-nav:active{background:#ffffff8c}
+.dlg-count{position:absolute;top:34px;left:34px;font-size:11px;letter-spacing:.16em;font-variant-numeric:tabular-nums;opacity:.6}
+.dlg-body.swap-next{animation:dlg-next .5s var(--ease)}.dlg-body.swap-prev{animation:dlg-prev .5s var(--ease)}
+@keyframes dlg-next{from{opacity:0;transform:translateX(46px)}}@keyframes dlg-prev{from{opacity:0;transform:translateX(-46px)}}
+@keyframes dlg-in{from{opacity:0;transform:translateY(34px) scale(.95)}}
+dialog[open] .dlg-body{animation:dlg-in .55s var(--ease)}dialog[open] .dlg-body.swap-next{animation:dlg-next .5s var(--ease)}dialog[open] .dlg-body.swap-prev{animation:dlg-prev .5s var(--ease)}
+@media(max-width:760px){.dlg-nav{width:44px;height:44px;font-size:28px}.dlg-nav.prev{left:3px}.dlg-nav.next{right:3px}.dlg-count{top:26px;left:24px}}
+
+dialog{overflow-x:hidden}
