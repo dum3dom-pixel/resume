@@ -62,9 +62,7 @@ body.fleur{background:#e6e3da}.f-page{max-width:1600px;margin:auto;background:va
 .is-blue{background:#abcbe0}.is-pink{background:#eaa0b8}.is-lime{background:#ddec7a}
 .f-route-photo{aspect-ratio:1/.92;background:#f4f0e8;border:8px solid #fffdf4;overflow:hidden;position:relative;box-shadow:0 4px 12px #0001}
 .f-route-photo img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
-.f-route-photo.is-cutout{background:#fbe6ec}.f-route-photo.is-cutout img{object-fit:contain;padding:10px 0 0}
-.f-route-photo .sheet-photo{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;transition:transform 1.2s var(--ease)}
-.f-route-card:hover .f-route-photo img,.f-route-card:hover .f-route-photo .sheet-photo{transform:scale(1.07)}
+.f-route-card:hover .f-route-photo img{transform:scale(1.07)}
 .f-route-card small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-top:14px}
 .f-route-card h3{font:700 clamp(40px,4vw,60px)/.95 'Oswald',Impact,sans-serif;text-transform:uppercase;letter-spacing:-.02em}
 .f-route-card .hand{font-size:25px;line-height:1.1;max-width:300px}
@@ -81,6 +79,7 @@ body.fleur{background:#e6e3da}.f-page{max-width:1600px;margin:auto;background:va
 @media(max-width:760px){.f-route{padding:72px 20px 84px}.f-route-head{margin-bottom:44px}.f-route-head .hand{font-size:38px}.f-route-cards{grid-template-columns:1fr;gap:28px}.f-route-card{min-height:0}.f-route-card:nth-child(2){margin-top:0}.f-route-card .line-arrow{margin-top:14px}.f-perks{grid-template-columns:1fr}.f-perk{padding:44px 22px;border-right:0;border-bottom:1px solid #d6d0c3}.f-perk:last-child{border-bottom:0}.f-marquee{padding:16px 0}}
 
 /* ===== Новые карточки в магазине ===== */
+.f-product-photo.v2{background-image:url('fashion-products-2.webp')}
 .f-product{position:relative}
 .f-product-badge{position:absolute;top:18px;left:-7px;z-index:2;background:var(--lime);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:5px 10px;transform:rotate(-6deg);box-shadow:2px 2px 0 #1c1d1b24;pointer-events:none}
 
